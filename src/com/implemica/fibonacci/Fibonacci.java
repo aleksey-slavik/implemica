@@ -13,6 +13,8 @@ public class Fibonacci {
      * @return
      */
     public static int getValueAt(int pos) {
+        if (pos == 0)
+            return 0;
         return pos > 2 ? getValueAt(pos - 1) + getValueAt(pos - 2) : 1;
     }
 }

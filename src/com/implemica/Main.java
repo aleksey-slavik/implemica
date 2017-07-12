@@ -37,7 +37,7 @@ public class Main {
         System.out.println("gcd = " + gcd.samplingGCD());
         System.out.println("==================================================");
         System.out.println("Fibonacci demo");
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 100; i++)
             System.out.print(Fibonacci.getValueAt(i + 1) + " ");
         System.out.println("\n==================================================");
         System.out.println("House demo");

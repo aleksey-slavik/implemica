@@ -20,34 +20,45 @@ public enum Month {
     NOVEMBER,
     DECEMBER;
 
+    /**
+     * Array of numbers of months
+     */
     private static final Month[] monthList = Month.values();
 
     /**
+     * Number of the last month of year in array
+     */
+    private static final int END_OF_YEAR = 11;
+
+    /**
      * Return the number of day of current month
-     * @return
+     * @return  count of days for current month
      */
     public int daysCount() {
-        switch (this) {
-            case FEBRUARY:
-                return 29;
-            case APRIL:
-            case JUNE:
-            case SEPTEMBER:
-            case NOVEMBER:
+        if (this == FEBRUARY) {
+            return 29;
+
+        } else {
+
+            if(this == APRIL || this == JUNE || this == SEPTEMBER || this == NOVEMBER) {
                 return 30;
-            default:
-                return 31;
+            }
         }
+
+        return 31;
     }
 
     /**
      * Return the month object for given number
-     * @param month
-     * @return
+     * Month numbers must be in range from 0 to 11.
+     * @param month number of month
+     * @return      enum object for given number of month
      */
     public static Month getMonth(int month) {
-        if (month < 0 || month > 12)
+        if (month < 0 || month > END_OF_YEAR) {
             throw new IllegalArgumentException();
+        }
+
         return monthList[month];
     }
 }
