@@ -267,11 +267,12 @@ public class HouseTest {
      * Testcase for check correct work of toString() method
      * @param levels    count of levels in house
      * @param flats     count of flats per level in house
+     * @param expectedMessage   expected message
      */
-    private void toStringTest(int levels, int flats, String message) {
+    private void toStringTest(int levels, int flats, String expectedMessage) {
         House house = new House(levels, flats);
         assertEquals(levels, house.getLevels());
         assertEquals(flats, house.getFlats());
-        assertEquals(message, house.toString());
+        assertEquals(expectedMessage, house.toString());
     }
 }

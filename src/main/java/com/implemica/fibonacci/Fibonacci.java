@@ -59,18 +59,14 @@ public class Fibonacci {
                     "Input value " + pos + " must be in range from 0 to " + MAX_VALUE);
         }
 
-        if (pos == 0) {
-            return 0;
+        if (values.get(pos) == null) {
+
+            for (int i = values.size(); i <= pos; i++) {
+                values.put(i, values.get(i - 1) + values.get(i - 2));
+            }
         }
 
-        int a = 0, b = 1;
-
-        for (int i = 0; i < pos; i++) {
-            b = a + b;
-            a = b - a;
-        }
-
-        return a;
+        return values.get(pos);
     }
 
     /**
@@ -85,12 +81,13 @@ public class Fibonacci {
                     "Input value " + pos + " must be in range from 0 to " + MAX_VALUE);
         }
 
-        if (values.containsKey(pos)) {
-            return values.get(pos);
-        } else {
-            int value = getValueAtMemorization(pos - 1) + getValueAtMemorization(pos - 2);
+        Integer value = values.get(pos);
+
+        if (value == null) {
+            value = getValueAtMemorization(pos - 1) + getValueAtMemorization(pos - 2);
             values.put(pos, value);
-            return value;
         }
+
+        return value;
     }
 }

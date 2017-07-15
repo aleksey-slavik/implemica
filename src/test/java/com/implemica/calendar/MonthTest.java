@@ -30,37 +30,22 @@ public class MonthTest {
     }
 
     /**
-     * Check correct work of method getMonth()
+     * Check correct month numbers
      */
     @Test
     public void getMonth() {
-        monthTest(0,Month.JANUARY);
-        monthTest(1,Month.FEBRUARY);
-        monthTest(2,Month.MARCH);
-        monthTest(3,Month.APRIL);
-        monthTest(4,Month.MAY);
-        monthTest(5,Month.JUNE);
-        monthTest(6,Month.JULY);
-        monthTest(7,Month.AUGUST);
-        monthTest(8,Month.SEPTEMBER);
-        monthTest(9,Month.OCTOBER);
-        monthTest(10,Month.NOVEMBER);
-        monthTest(11,Month.DECEMBER);
-    }
-
-    /**
-     * Check wrong input values for method getMonth()
-     */
-    @Test
-    public void wrongMonth() {
-        monthFail(-2147483648);
-        monthFail(-775);
-        monthFail(-62);
-        monthFail(-1);
-        monthFail(12);
-        monthFail(566);
-        monthFail(8766);
-        monthFail(2147483647);
+        assertEquals(0, Month.JANUARY.ordinal());
+        assertEquals(1, Month.FEBRUARY.ordinal());
+        assertEquals(2, Month.MARCH.ordinal());
+        assertEquals(3, Month.APRIL.ordinal());
+        assertEquals(4, Month.MAY.ordinal());
+        assertEquals(5, Month.JUNE.ordinal());
+        assertEquals(6, Month.JULY.ordinal());
+        assertEquals(7, Month.AUGUST.ordinal());
+        assertEquals(8, Month.SEPTEMBER.ordinal());
+        assertEquals(9, Month.OCTOBER.ordinal());
+        assertEquals(10, Month.NOVEMBER.ordinal());
+        assertEquals(11, Month.DECEMBER.ordinal());
     }
 
     /**
@@ -73,26 +58,4 @@ public class MonthTest {
         assertEquals(days, month.daysCount());
     }
 
-    /**
-     * Testcase for check correct work of method getMonth()
-     * @param number    number of month
-     * @param month     actual month
-     * @see Month
-     */
-    private void monthTest(int number, Month month) {
-        assertEquals(month, Month.getMonth(number));
-    }
-
-    /**
-     * Testcase for check wrong input values for method getMonth()
-     * @param value     number of month
-     */
-    private void monthFail (int value) {
-        try {
-            Month.getMonth(value);
-            fail("Number " + value + " of month must be in range from 0 to 11");
-        } catch (IllegalArgumentException e) {
-            //expected
-        }
-    }
 }

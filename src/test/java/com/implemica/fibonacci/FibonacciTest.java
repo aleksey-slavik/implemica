@@ -12,8 +12,8 @@ import static org.junit.Assert.*;
 public class FibonacciTest {
 
     /**
-     * Check correct work of method getValueAt of Fibonacci class.
-     * Method returned value of Fibonacci sequence in given position.
+     * Check correct work of methods getValueAt() of Fibonacci class.
+     * Methods returned value of Fibonacci sequence in given position.
      */
     @Test
     public void getValueAt() {
@@ -24,7 +24,7 @@ public class FibonacciTest {
         fibonacciTest(10,55);
         fibonacciTest(15,610);
         fibonacciTest(20,6765);
-        fibonacciTest(25, 75025);
+        fibonacciTest(25,75025);
         fibonacciTest(30,832040);
         fibonacciTest(35,9227465);
         fibonacciTest(40,102334155);
@@ -33,7 +33,7 @@ public class FibonacciTest {
     }
 
     /**
-     * Check wrong input data for the method getValueAt()
+     * Check wrong input data for the methods getValueAt()
       */
     @Test
     public void getWrongValueAt() {

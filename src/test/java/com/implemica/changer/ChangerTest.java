@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 public class ChangerTest {
 
     /**
-     * Check correct work of methods change(), changeXOR() and toString() of Changer class.
+     * Check correct work of methods change(), changeXOR() of Changer class.
      * Methods was swap two input values
      */
     @Test
@@ -128,11 +128,11 @@ public class ChangerTest {
      * Testcase for check correct work of toString() method
      * @param a         first value
      * @param b         second value
-     * @param message   actual message
+     * @param expectedMessage   expected message
      */
-    private void toStringTest(int a, int b, String message) {
+    private void toStringTest(int a, int b, String expectedMessage) {
         Changer input = new Changer(a, b);
         checkStatement(input, a, b);
-        assertEquals(message, input.toString());
+        assertEquals(expectedMessage, input.toString());
     }
 }

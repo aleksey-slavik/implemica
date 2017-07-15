@@ -320,12 +320,12 @@ public class CalendarTest {
     /**
      * Testcase for check correct work of toString() method
      * @param nyDay     day of the week of new year day
-     * @param message   actual message
+     * @param expectedMessage   expected message
      * @see Day
      */
-    private void toStringTest(Day nyDay, String message) {
+    private void toStringTest(Day nyDay, String expectedMessage) {
         Calendar calendar = new Calendar(nyDay);
         assertEquals(nyDay, calendar.getNewYearDay());
-        assertEquals(message, calendar.toString());
+        assertEquals(expectedMessage, calendar.toString());
     }
 }

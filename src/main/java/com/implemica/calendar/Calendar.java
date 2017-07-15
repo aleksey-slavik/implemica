@@ -38,15 +38,16 @@ public class Calendar {
      */
     public Day getDayOfYear(Month month, int day) {
         if (day < 1 || day > month.daysCount()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Illegal day number " + day + " in " + month + ". Count of days must be in range from 1 to " + month.daysCount());
         }
 
         int daysCount = day + newYearDay.ordinal() - 1;
+
         for (int i = 0; i < month.ordinal(); i++) {
-            daysCount += Month.getMonth(i).daysCount();
+            daysCount += Month.values()[i].daysCount();
         }
 
-        return Day.getDay(daysCount % DAY_OF_WEEK_COUNT);
+        return Day.values()[daysCount % DAY_OF_WEEK_COUNT];
     }
 
     @Override

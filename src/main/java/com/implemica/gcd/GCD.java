@@ -77,6 +77,7 @@ public class GCD {
         res[0] = array[0];
 
         for(int i : array) {
+
             if(!isContains(res, i)) {
                 res[cur] = i;
                 cur++;
@@ -98,6 +99,7 @@ public class GCD {
      */
     private static boolean isContains(int[] array, int a) {
         for (int i : array) {
+
             if (i == a) {
                 return true;
             }
